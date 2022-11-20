@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <title>Item Details</title>
+  <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+  <div class="container w-50">
+    <div class="card text-left" style="width: 32rem; text-align:center;">
+      <div class="card-body">
+        <div class="card-header">
+          <h1> Edit bike </h1>
+          <a href="/">RETURN HOME</a>
+        </div>
+        <form action="http://localhost:8000/update" method="post">
+          <div class="mb-3">
+            <label for="_id" class="form-label">Bike Id</label>
+            <input type="number" class="form-control" id="id" name="id" value="{{bike.id}}" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="model" class="form-label">Bike Model</label>
+            <input type="text" class="form-control" id="model" name="model" value="{{bike.model}}">
+          </div>
+          <div class="mb-3">
+            <label for="model" class="form-label">Bike Model</label>
+            <input type="text" class="form-control" id="brand" name="brand" value="{{bike.brand}}">
+          </div>
+          <div class="mb-3">
+            <label for="features" class="form-label">features</label>
+            <input type="text" class="form-control" id="features" name="features" value="{{bike.features}}">
+          </div>
+          <div class="mb-3">
+            <label for="year" class="form-label">Bike Year</label>
+            <input type="number" class="form-control" id="year" name="year" rows="3" value="{{bike.year}}">
+          </div>
+          <div class="mb-3">
+            <label for="size" class="form-label">Bike size</label>
+            <input type="text" class="form-control" id="size" name="size" rows="3" value="{{bike.size}}">
+          </div>
+          <div class="mb-3">
+            <label for="availability" class="form-label">Bike availability</label>
+            <input type="text" class="form-control" id="availability" name="availability" rows="3"
+              value="{{bike.availability}}">
+          </div>
+          <div class="mb-3">
+            <label for="availability" class="form-label">Bike Price day</label>
+            <input type="text" class="form-control" id="Price_day" name="Price_day" rows="3"
+              value="{{bike.Price_day[0]}}{{bike.Price_day[1]}}">
+          </div>
+          <div class="mb-3">
+            <label for="location_latitude" class="form-label">Bike location latitude</label>
+            <input type="number" class="form-control" id="location_latitude" name="location_latitude" rows="3"
+              value="{{bike.location_latitude}}" step="any">
+          </div>
+          <div class="mb-3">
+            <label for="location_length" class="form-label">Bike location length</label>
+            <input type="number" class="form-control" id="location_length" name="location_length" rows="3"
+              value="{{bike.location_length}}" step="any">
+          </div>
+          <div class="mb-3">
+            <label for="location_length" class="form-label">Bike image</label>
+            <input type="text" class="form-control" id="image" name="image" rows="3" value="{{bike.image}}">
+          </div>
+
+          <input type="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset"
+            class="btn btn-danger">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

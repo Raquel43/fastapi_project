@@ -1,0 +1,51 @@
+<form>
+    <div id="list_bike" class="container">
+        <h1> List of Bikes </h1>
+        <p>Welcome to bike collection , here you can find and explore bikes.
+            Click <a class="btn btn-info" href="http://localhost:8000/bike">here</a> to see the list of Bikes.
+          </p>
+        <a class="btn btn-success" href="http://localhost:8000/createui">Create a new bike</a>
+        <table class="table  table-hover table-sm">
+            <thead>
+                <td>Id</td>
+                <td>Model</td>
+                <td>Brand</td>
+                <td>Features</td>
+                <td>Year</td>
+                <td>Size</td>
+                <td>availability</td>
+                <td>Price day</td>
+                <td>location latitude</td>
+                <td>location length</td>
+                <td>image</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </thead>
+            {% for bike in bike_list %}
+            <tr>
+                <td><a href="http://localhost:8000/bike/{{bike.id}}">{{bike.id}}</a></td>
+                <td>{{bike.model}}</td>
+                <td>{{bike.brand}}</td>
+                <td>{{bike.features}}</td>
+                <td>{{bike.year}}</td>
+                <td>{{bike.size}}</td>
+                <td>{{bike.availability}}</td>
+                <td>{{bike.Price_day[0]}}{{bike.Price_day[1]}}</td>
+                <td>{{bike.location_latitude}}</td>
+                <td>{{bike.location_length}}</td>
+                <td width="70px"><img src="/static/images/{{bike.image}}" width="100%" alt=""></td>
+                <td><a class="btn btn-warning" href="http://localhost:8000/bike/edit/{{bike.id}}">Edit</a></td>
+                <td>
+                    <a class="btn btn-danger" href="http://localhost:8000/bike/delete/{{bike.id}}">Delete</a>
+
+                </td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+    </div>
+</form>
+</body>
+
+</html>
